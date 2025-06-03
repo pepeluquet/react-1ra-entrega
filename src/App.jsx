@@ -1,15 +1,22 @@
-import { useState } from 'react'
 import './App.css'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 
 function App() {
-    return (
-      <>
-        <NavBar />
+  return (
+    <div className="grid-container">
+      <NavBar />
+      <main className="portada">
+        {/* Aquí puedes poner un banner o portada */}
+      </main>
+      <section className="nucleo">
         <ItemListContainer greeting="¡Bienvenido a la tienda!" />
-      </>
-    )
+      </section>
+      <footer className="final">
+        {/* Pie de página */}
+      </footer>
+    </div>
+  )
 }
 
 export default App
