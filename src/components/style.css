@@ -1,16 +1,24 @@
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.3fr 1fr 0.1fr 0.01fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas: 
-        "navbar navbar navbar"
-        "portada portada portada"
-        "nucleo nucleo nucleo"
-        "final final final";
+        "navbar"
+        "nucleo"
+        "final";
+    min-height: 100vh;
 }
 
-.portada {
-    grid-area: portada;
+.navbar {
+  grid-area: navbar;
+}
+
+.nucleo {
+  grid-area: nucleo;
+}
+
+.final {
+  grid-area: final;
 }
 
 /* NAVBAR */
