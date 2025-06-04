@@ -12,11 +12,7 @@
 
 .navbar {
     grid-area: navbar;
-    background-color: #809671;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    position: sticky;
-    top: 0;
-    padding-top: 0.2rem;
+    background-color: #809671; 
     padding-bottom: 0.2rem;
 }
 
@@ -26,17 +22,15 @@
     color: #f5f5dc;
     font-weight: 650;
     text-decoration: overline;
-}
-
-.navbar .navbar-brand .logo {
-    height: 2em;
+    padding-top: 0em;
+    padding-bottom: 0em;
 }
 
 .navbar .nav-link:hover,
 .navbar .navbar-brand:hover {
     color: #2A2A24;
     background-color: #e5d2b8;
-    border-radius: 0.25em;
+    border-radius: 0.1em;
 }
 
 .navbar .nav-item {
@@ -44,13 +38,10 @@
 }
 
 .navbar .navbar-brand img {
-    height: 2rem;
-    max-height: 2rem;
+    height: 2.8rem;
 }
 
 .navbar .nav-link {
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
     font-size: 1rem;
 }
 

@@ -6,7 +6,7 @@ function NavBar() {
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
                 <a className="navbar-brand">
-                    <img src="/logo.png" alt="logo" className="d-inline-block align-text-top me-2" />
+                    <img src="/logo.png" alt="logo" />
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>

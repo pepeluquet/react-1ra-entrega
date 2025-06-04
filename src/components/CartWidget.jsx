@@ -1,4 +1,4 @@
-function CartWidget({ contador = 3 }) {
+function CartWidget({ contador = 0 }) {
     return (
         <button className="btn btn-outline-success position-relative">
             <i className="fas fa-shopping-cart"></i>
