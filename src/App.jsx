@@ -10,7 +10,7 @@ function App() {
                 {/* Aquí puedes poner un banner o portada */}
             </main>
             <section className="nucleo">
-                <ItemListContainer greeting="¡Bienvenidos! Tienda InaYoga" />
+                <ItemListContainer titulo="¡Bienvenidos! Tienda InaYoga" />
             </section>
             <footer className="final">
                 {/* Pie de página */}

@@ -1,9 +1,9 @@
 import './style.css'
 
-function ItemListContainer({ greeting }) {
+function ItemListContainer({ titulo }) {
     return (
         <section className="item-list-container">
-            <h1>{greeting}</h1>
+            <h1>{titulo}</h1>
             {/* futuro catálogo de productos */}
         </section>
     )
