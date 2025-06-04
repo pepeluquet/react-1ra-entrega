@@ -16,8 +16,17 @@ function NavBar() {
                         <li className="nav-item">
                             <a className="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Productos</a>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Productos
+                            </a>
+                            <ul className="dropdown-menu" aria-labelledby="productosDropdown">
+                                <li><a className="dropdown-item" href="#">Mats</a></li>
+                                <li><a className="dropdown-item" href="#">Rodillos</a></li>
+                                <li><a className="dropdown-item" href="#">Cintas de elongar</a></li>
+                                <li><a className="dropdown-item" href="#">Pelotas</a></li>
+                                <li><a className="dropdown-item" href="#">Tacos de goma</a></li>
+                            </ul>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Contacto</a>
