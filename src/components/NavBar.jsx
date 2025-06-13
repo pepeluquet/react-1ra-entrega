@@ -28,9 +28,6 @@ function NavBar() {
                                 <li><a className="dropdown-item" href="#">Tacos de goma</a></li>
                             </ul>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Contacto</a>
-                        </li>
                     </ul>
                     <CartWidget />
                 </div>
