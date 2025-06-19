@@ -1,6 +1,7 @@
 import './App.css'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import Counter from './components/Counter'
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             </main>
             <section className="nucleo">
                 <ItemListContainer titulo="¡Bienvenidos! Tienda InaYoga" />
+                <Counter />
             </section>
             <footer className="final">
                 {/* Pie de página */}
