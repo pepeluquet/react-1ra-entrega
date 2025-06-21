@@ -86,17 +86,22 @@ const productos = [
 function ItemListContainer({ titulo }) {
     const [items, setItems] = useState(productos)
 
-    const getItems = () => {
-        return new Promise((resolve) => {
+
+    const getItems = () => new Promise((resolve, react) => {
+        if (productos.length > 0) {
             setTimeout(() => {
-                resolve(items)
+                resolve(productos)
             }, 2000)
-        })
-    }
+        } else {
+            reject ("No hay productos disponibles")
+        }
+    })
 
     useEffect(() => {
         getItems()
-        .then(data => setItems(data))}, [])
+        .then(data => setItems(data))
+        .catch(error => console.error(error))
+    }, [])
 
     return (
         <section className="item-list-container">
