@@ -1,3 +1,5 @@
+import { useState , useEffect } from "react"
+
 const productos = [
   {
     "id": "1",
@@ -82,10 +84,24 @@ const productos = [
 ];
 
 function ItemListContainer({ titulo }) {
+    const [items, setItems] = useState(productos)
+
+    const getItems = () => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(items)
+            }, 2000)
+        })
+    }
+
+    useEffect(() => {
+        getItems()
+        .then(data => setItems(data))}, [])
+
     return (
         <section className="item-list-container">
             <h1>{titulo}</h1>
-            {productos.map(producto => (
+            {items.map(producto => (
                 <div key={producto.id} className="item">
                     <h2>{producto.nombre}</h2>
                     <p>{producto.descripcion}</p>
