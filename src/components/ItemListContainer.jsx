@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react"
+import ItemList from "./ItemList"
 
 const productos = [
   {
@@ -104,16 +105,7 @@ function ItemListContainer({ titulo }) {
     }, [])
 
     return (
-        <section className="item-list-container">
-            <h1>{titulo}</h1>
-            {items.map(producto => (
-                <div key={producto.id} className="item">
-                    <h2>{producto.nombre}</h2>
-                    <p>{producto.descripcion}</p>
-                    <p>Precio: ${producto.precio}</p>
-                </div>
-            ))}
-        </section>
+        <ItemList items={items} />
     )
 }
 
