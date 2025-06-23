@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-const withLog = (Component) => {
-    function ComponentWithLog (props) {
+const withLoading = (Component) => {
+    function ComponentWithLoading (props) {
         useEffect(() => {
             console.log("pagina cargada correctamente");
         }, []);
@@ -11,7 +11,7 @@ const withLog = (Component) => {
         )
     }
 
-    return ComponentWithLog
+    return ComponentWithLoading
 }
 
-export default withLog
+export default withLoading
