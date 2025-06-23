@@ -1,5 +1,8 @@
 import { useState , useEffect } from "react"
 import ItemList from "./ItemList"
+import withLog from "../hoc/withLog"
+
+const ItemListWithLog = withLog(ItemList)
 
 function ItemListContainer() {
     const [items, setItems] = useState([])
@@ -11,7 +14,7 @@ function ItemListContainer() {
     }, [])
 
     return (
-        <ItemList items={items} />
+        <ItemListWithLog items={items} />
     )
 }
 
