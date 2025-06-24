@@ -14,7 +14,10 @@ function App() {
                                             <Counter />
                                         </section>} />
             </Routes>
-
+            
+            <footer className="final">
+                © 2025 InaYoga - Todos los derechos reservados
+            </footer>
         </BrowserRouter>
     )
 }
