@@ -10,7 +10,6 @@ function NavBar() {
         fetch('https://dummyjson.com/products/category-list')
             .then(response => response.json())
             .then(data => setCategories(data))
-            .catch(error => console.error('Error fetching categories:', error))
     }, [])
 
     return (

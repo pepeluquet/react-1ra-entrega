@@ -1,6 +1,7 @@
 import './App.css'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer'
 import Counter from './components/Counter'
 import { BrowserRouter, Routes, Route } from "react-router"
 
@@ -21,7 +22,11 @@ function App() {
                                             <ItemListContainer />
                                             <Counter />
                                         </section>} />
-                                                        
+                <Route path="/item/:itemId" element={<section className="nucleo">
+                                            <h1>¡Bienvenidos a InaYoga!</h1>
+                                            <ItemDetailContainer />
+                                            <Counter />
+                                        </section>} />
             </Routes>
             
             <footer className="final">
