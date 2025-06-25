@@ -10,9 +10,18 @@ function App() {
             <NavBar />
             <Routes>
                 <Route path="/" element={<section className="nucleo">
-                                            <ItemListContainer titulo="¡Bienvenidos! Tienda InaYoga" />
+                                            <h1>¡Bienvenidos a InaYoga!</h1>
+                                            <p>Tu tienda de productos de yoga y bienestar</p>
+                                            <ItemListContainer />
                                             <Counter />
                                         </section>} />
+                <Route path="/categoria/:categoryName" element={<section className="nucleo">
+                                            <h1>¡Bienvenidos a InaYoga!</h1>
+                                            <p>Tu tienda de productos de yoga y bienestar</p>
+                                            <ItemListContainer />
+                                            <Counter />
+                                        </section>} />
+                                                        
             </Routes>
             
             <footer className="final">
