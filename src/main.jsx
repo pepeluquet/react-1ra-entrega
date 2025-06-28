@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import CartProvider from './context/CartProvider.js'
+import CartProvider from './context/CartProvider.jsx'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 

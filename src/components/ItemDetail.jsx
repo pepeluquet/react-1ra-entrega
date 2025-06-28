@@ -11,7 +11,7 @@ function ItemDetail({ products }) {
                     <h2>{products?.title}</h2>
                     <p>{products?.description}</p>
                     <p><strong>Precio: </strong>${products?.price}</p>
-                    <button className="btn btn-primary">Agregar al carrito</button>
+                    {/* <button className="btn btn-primary">Agregar al carrito</button> */}
                 </div>
             </div>
         </div>
