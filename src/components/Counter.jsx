@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react"
+import { CartContext } from "../context/CartContext"
 
-function Counter() {
+function Counter({ product }) {
   const [count, setCount] = useState(0)
+  const { addToCart } = useContext(CartContext)
 
   return (
     <div className="d-flex align-items-center justify-content-center my-3">
@@ -10,9 +12,12 @@ function Counter() {
       <span className="mx-2 fs-5">{count}</span>
       <button className="btn btn-outline-primary mx-3"
         onClick={() => setCount(count + 1)} > + </button>
-      <button className="btn btn-primary">Agregar al carrito</button>
+      <button className="btn btn-primary"
+        onClick={() => addToCart(product)}>
+        Agregar al carrito
+      </button>
     </div>
   )
 }
 
-export default Counter;
+export default Counter
