@@ -12,7 +12,7 @@ function ItemDetail({ products }) {
                     <h2>{products?.title}</h2>
                     <p>{products?.description}</p>
                     <p><strong>Precio: </strong>${products?.price}</p>
-                    <Counter item={products} />
+                    <Counter product={products} />
                 </div>
             </div>
         </div>
