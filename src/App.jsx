@@ -23,7 +23,7 @@ function App() {
                                             <Counter />
                                         </section>} />
                 <Route path="/item/:itemId" element={<section className="nucleo">
-                                            <h1>¡Bienvenidos a InaYoga!</h1>
+                                            <h1> InaYoga </h1>
                                             <ItemDetailContainer />
                                         </section>} />
             </Routes>
