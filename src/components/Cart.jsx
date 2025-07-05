@@ -2,19 +2,8 @@ import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 
 function Cart() {
-    const { cart, setCart } = useContext(CartContext)
+    const { cart, removeItem, clearCart } = useContext(CartContext)
 
-    // Eliminar un producto por id
-    const removeItem = (id) => {
-        setCart(prevCart => prevCart.filter(item => item.id !== id))
-    }
-
-    // Vaciar todo el carrito
-    const clearCart = () => {
-        setCart([])
-    }
-
-    // Calcular total
     const total = cart.reduce((acum, item) => acum + item.price * item.quantity, 0)
 
     if (cart.length === 0) {
@@ -29,12 +18,10 @@ function Cart() {
     return (
         <div className="container my-5">
             <h2 className="mb-4">Carrito de Compras</h2>
-            <button className="btn btn-danger mb-3" onClick={clearCart}>Vaciar carrito</button>
             {cart.map(item => (
                 <div className="mb-3" key={item.id}>
                     <div className="card h-100">
                         <div className="card-body d-flex flex-column flex-md-row align-items-md-center justify-content-between">
-                            {/* Imagen del producto */}
                             <img
                                 src={item.thumbnail}
                                 alt={item.title}
@@ -56,8 +43,12 @@ function Cart() {
                     </div>
                 </div>
             ))}
+            <button className="btn btn-danger mb-3" onClick={clearCart}>Vaciar carrito</button>
             <div className="alert alert-success mt-4 fs-5">
                 <strong>Total de la compra: ${total.toFixed(2)}</strong>
+            </div>
+            <div className="d-flex justify-content-end mt-3">
+                <button className="btn btn-success btn-lg"> Ir al Checkout</button>
             </div>
         </div>
     )
