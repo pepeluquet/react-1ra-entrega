@@ -5,7 +5,6 @@ function ItemList ({ items }) {
     
     return (        
         <section className="item-list-container">
-            <h1>Lista de Productos</h1>
             <div className="container">
                 <div className="row">
                     {items.map((products) => (
