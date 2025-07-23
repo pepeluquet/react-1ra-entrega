@@ -2,7 +2,7 @@ import { useState , useEffect } from "react"
 import { useParams } from "react-router"
 import ItemList from "./ItemList"
 import withLog from "../hoc/withLog"
-import { fetchProducts } from "../firebase/db"
+import { fetchProducts , fetchCategories } from "../firebase/db"
 
 const ItemListWithLog = withLog(ItemList)
 
@@ -19,6 +19,7 @@ function ItemListContainer() {
                 setItems(res)
             }
         })
+        fetchCategories(categoryName)
     }, [categoryName])
 
     return (
