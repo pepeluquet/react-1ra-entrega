@@ -11,21 +11,16 @@ function ItemListContainer() {
     const { categoryName } = useParams()
 
     useEffect(() => {
-        fetchProducts().then(res => {
-            if (categoryName) {
-                const filtered = res.filter(prod => prod.category === categoryName)
-                setItems(filtered)
-            } else {
-                setItems(res)
-            }
-        })
-        fetchCategories(categoryName)
+        if (categoryName) {
+            fetchCategories(categoryName).then(res => setItems(res))
+        } else {
+            fetchProducts().then(res => setItems(res))
+        } 
     }, [categoryName])
 
     return (
         <ItemListWithLog items={items} />
     )
-
 }
 
 export default ItemListContainer

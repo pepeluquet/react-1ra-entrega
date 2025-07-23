@@ -6,7 +6,7 @@ function ItemDetail({ products }) {
         <div className="container">
             <div className="row">
                 <div className="col-md-6">
-                    <img src={products?.thumbnail} className="img-fluid" alt={products?.title} />
+                    <img src={products?.image} className="img-fluid" alt={products?.title} />
                 </div>
                 <div className="col-md-6">
                     <h2>{products?.title}</h2>

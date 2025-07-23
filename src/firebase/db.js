@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs  , query , where} from "firebase/firestore"
+import { getFirestore, collection, getDocs  , query , where , doc, getDoc} from "firebase/firestore"
 import { app } from "./configuracion"
 
 const db = getFirestore(app)
@@ -22,4 +22,15 @@ export const fetchCategories = async (category) => {
         products.push({ id: doc.id, ...doc.data() })
     })
     return products
+}
+
+export const getProductById = async (itemId) => {
+    const docRef = doc(db, "Products", itemId);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        return { id: docSnap.id, ...docSnap.data() }
+    } else {
+        throw new Error("No such document!");
+    }
 }
