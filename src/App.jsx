@@ -4,6 +4,7 @@ import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import Counter from './components/Counter'
 import { BrowserRouter, Routes, Route } from "react-router"
+import Checkout from './components/Checkout'
 import Cart from './components/Cart'
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
                                         </section>} />
                 <Route path="/cart" element={<section className="nucleo">
                                             <Cart />
+                                        </section>} />
+                <Route path="/checkout" element={<section className="nucleo">
+                                            <Checkout />
                                         </section>} />
             </Routes>
             

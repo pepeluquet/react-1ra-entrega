@@ -1,8 +1,10 @@
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import { useNavigate } from 'react-router'
 
 function Cart() {
     const { cart, removeItem, clearCart } = useContext(CartContext)
+    const navigate = useNavigate()
 
     const total = cart.reduce((acum, item) => acum + item.price * item.quantity, 0)
 
@@ -22,8 +24,9 @@ function Cart() {
                 <div className="mb-3" key={item.id}>
                     <div className="card h-100">
                         <div className="card-body d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+                            {console.log(item)}
                             <img
-                                src={item.thumbnail}
+                                src={item.image}
                                 alt={item.title}
                                 style={{ width: "80px", height: "80px", objectFit: "cover" }}
                                 className="me-3 rounded"
@@ -48,7 +51,7 @@ function Cart() {
                 <strong>Total de la compra: ${total.toFixed(2)}</strong>
             </div>
             <div className="d-flex justify-content-end mt-3">
-                <button className="btn btn-success btn-lg"> Ir al Checkout</button>
+                <button className="btn btn-success btn-lg" onClick={() => navigate('/checkout')} > Ir al Checkout</button>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ function Counter({ product }) {
   const { addToCart } = useContext(CartContext)
 
   const handleToCart = () => {
-    addToCart({id: product.id, title: product.title, price: product.price, quantity: count})
+    addToCart({id: product.id, title: product.title, price: product.price, image: product.image, quantity: count})
   }
 
   return (
