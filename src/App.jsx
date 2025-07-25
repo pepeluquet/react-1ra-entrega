@@ -6,6 +6,7 @@ import Counter from './components/Counter'
 import { BrowserRouter, Routes, Route } from "react-router"
 import Checkout from './components/Checkout'
 import Cart from './components/Cart'
+import { ToastContainer } from "react-toastify";
 
 function App() {
     return (
@@ -34,7 +35,7 @@ function App() {
                                             <Checkout />
                                         </section>} />
             </Routes>
-            
+            <ToastContainer />
             <footer className="final">
                 © 2025 InaYoga - Todos los derechos reservados
             </footer>

@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { CartContext } from "./CartContext"
+import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([])
@@ -19,9 +21,29 @@ const CartProvider = ({ children }) => {
 
   const removeItem = (id) => {
     setCart(cart.filter(item => item.id !== id))
+    toast.info("Producto eliminado del carrito", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
   }
 
-  const clearCart = () => setCart([])
+  const clearCart = () => { 
+    setCart([])
+    toast.info("Carrito vaciado", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    })
+  }
 
   const getQuantity = () => cart.reduce((acc, item) => acc + item.quantity, 0)
 
