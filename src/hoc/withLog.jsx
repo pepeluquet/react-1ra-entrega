@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 const withLog = (Component) => {
     function ComponentWithLog (props) {
         useEffect(() => {
-            console.log("pagina cargada correctamente");
-        }, []);
+            console.log("pagina cargada correctamente")
+        }, [])
 
         return (
             <Component {...props} />
