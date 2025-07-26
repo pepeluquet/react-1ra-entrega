@@ -11,7 +11,7 @@ function Counter({ product }) {
     addToCart({id: product.id, title: product.title, price: product.price, image: product.image, quantity: count})
     toast.success("Producto agregado al carrito!", {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

@@ -55,5 +55,6 @@ export const getProductById = async (itemId) => {
 export const createOrder = async (order) => {
     const docRef = await addDoc(collection(db, "orders"), order)
     console.log("Order creada con ID: ", docRef.id)
+    return docRef
 }
 

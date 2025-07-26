@@ -23,7 +23,7 @@ const CartProvider = ({ children }) => {
     setCart(cart.filter(item => item.id !== id))
     toast.info("Producto eliminado del carrito", {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -36,7 +36,7 @@ const CartProvider = ({ children }) => {
     setCart([])
     toast.info("Carrito vaciado", {
       position: "top-right",
-      autoClose: 2000,
+      autoClose: 1000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
