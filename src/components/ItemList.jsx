@@ -8,7 +8,9 @@ function ItemList ({ items }) {
             <div className="container">
                 <div className="row">
                     {items.map((products) => (
-                        <Item key={products.id} products={products} />
+                        <div className="col-md-4 mb-4" key={products.id}>
+                            <Item products={products} />
+                        </div>
                     ))}
                 </div>
             </div>

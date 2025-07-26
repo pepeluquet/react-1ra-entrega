@@ -13,6 +13,9 @@ function Cart() {
             <div className="container my-5">
                 <h2>Carrito de Compras</h2>
                 <p>No hay productos en el carrito.</p>
+                <button className="btn btn-secondary btn-lg mb-6" onClick={() => navigate("/")}>
+                    Volver a productos
+                </button>
             </div>
         )
     }
@@ -46,7 +49,18 @@ function Cart() {
                     </div>
                 </div>
             ))}
-            <button className="btn btn-danger mb-3" onClick={clearCart}>Vaciar carrito</button>
+            <div className="d-flex justify-content-between align-items-center mt-3">
+                <div className="w-100 d-flex justify-content-center">
+                    <button className="btn btn-secondary btn-lg mb-6" onClick={() => navigate("/")}>
+                        Volver a productos
+                    </button>
+                </div>
+                <div>
+                    <button className="btn btn-danger mb-3" onClick={clearCart}>
+                        Vaciar carrito
+                    </button>
+                </div>
+            </div>
             <div className="alert alert-success mt-4 fs-5">
                 <strong>Total de la compra: ${total.toFixed(2)}</strong>
             </div>

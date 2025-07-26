@@ -21,12 +21,23 @@ export const fetchProducts = async () => {
     return products
 }
 
-export const fetchCategories = async (category) => {
-    const q = query(collection(db, "Pruducts"), where("category", "==", category))
+export const fetchCategories = async () => {
+    const querySnapshot = await getDocs(collection(db, "Products"))
+    const categoriesSet = new Set()
+    querySnapshot.forEach(doc => {
+        const data = doc.data()
+        if (data.category) {
+            categoriesSet.add(data.category)
+        }
+    })
+    return Array.from(categoriesSet)
+}
+
+export const fetchProductsByCategory = async (category) => {
+    const q = query(collection(db, "Products"), where("category", "==", category))
     const querySnapshot = await getDocs(q)
     const products = []
-
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach(doc => {
         products.push({ id: doc.id, ...doc.data() })
     })
     return products
@@ -38,11 +49,12 @@ export const getProductById = async (itemId) => {
 
     if (docSnap.exists()) {
         return { id: docSnap.id, ...docSnap.data() }
-    } else {
-        throw new Error("No such document!");
-    }
+    } 
 }
 
 export const createOrder = async (order) => {
-    const docRef = await addDoc(collection(db, "orders"), order);
+    const docRef = await addDoc(collection(db, "orders"), order)
+    console.log("Order creada con ID: ", docRef.id)
+    return docRef
 }
+

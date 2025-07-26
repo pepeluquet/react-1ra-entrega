@@ -1,15 +1,14 @@
 import './style.css'
 import CartWidget from './CartWidget'
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router'
+import { NavLink } from 'react-router'
+import { fetchCategories } from '../firebase/db'
 
 function NavBar() {
     const [categories, setCategories] = useState([])
 
     useEffect(() => {
-        fetch('https://dummyjson.com/products/category-list')
-            .then(response => response.json())
-            .then(data => setCategories(data))
+        fetchCategories().then(data => setCategories(data))
     }, [])
 
     return (
@@ -24,16 +23,16 @@ function NavBar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
+                            <NavLink className="nav-link active" aria-current="page" to="/">Inicio</NavLink>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Productos
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="productosDropdown">
-                                {categories.map(cat => (
-                                    <li key={cat}>
-                                        <Link className="dropdown-item" to={`/categoria/${cat}`}>{cat}</Link>
+                                {categories.map(category => (
+                                    <li key={category}>
+                                        <NavLink className="dropdown-item" to={`/categoria/${category}`}>{category}</NavLink>
                                     </li>
                                 ))}
                             </ul>
